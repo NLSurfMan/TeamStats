@@ -1,0 +1,5 @@
+Matchfile=data/pl97.txt
+Line1=17
+Points1=Middlesbrough(-3)
+LeagueName=Premier League
+Season=1996-97

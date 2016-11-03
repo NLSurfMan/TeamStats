@@ -1,0 +1,336 @@
+16/9  
+AIK-Djurgården 3-5
+18/9  
+Frölunda-Färjestad 2-0
+Leksand-Brynäs 4-3 sd
+Luleå-MoDo 3-1
+Malmö-HV71 3-1
+Södertälje-Västerås 4-4
+20/9  
+Västerås-Leksand 1-6
+21/9  
+MoDo-Malmö 3-1
+Södertälje-HV71 3-0
+Färjestad-Djurgården 3-1
+AIK-Brynäs 4-6
+Luleå-Frölunda 2-5
+23/9  
+Djurgården-Södertälje 5-2
+25/9  
+Frölunda-AIK 2-2
+Brynäs-Leksand 3-5
+Västerås-Färjestad 0-6
+Malmö-Luleå 9-1
+HV71-MoDo 3-3
+27/9  
+MoDo-Djurgården 1-5
+Södertälje-Västerås 5-4
+Färjestad-Brynäs 1-1
+Leksand-Frölunda 1-4
+HV71-Malmö 3-0
+28/9  
+Luleå-Leksand 4-2
+Frölunda-Färjestad 2-4
+Brynäs-Södertälje 5-1
+Västerås-MoDo 3-1
+Djurgården-HV71 5-0
+Malmö-AIK 3-3
+30/9  
+AIK-Luleå 2-1 sd
+ 2/10 
+MoDo-Brynäs 1-1
+Södertälje-Frölunda 0-0
+Färjestad-Luleå 3-2
+Leksand-AIK 4-2
+Djurgården-Malmö 2-2
+HV71-Västerås 1-4
+ 5/10 
+AIK-Färjestad 2-4
+Luleå-Södertälje 0-0
+Frölunda-MoDo 4-5 sd
+Brynäs-HV71 1-3
+Västerås-Djurgården 5-2
+Malmö-Leksand 2-4
+ 9/10 
+MoDo-Luleå 4-4
+Södertälje-AIK 4-5 sd
+Leksand-Färjestad 3-3
+Västerås-Malmö 2-1 sd
+Djurgården-Brynäs 2-0
+HV71-Frölunda 0-0
+12/10 
+Leksand-Södertälje 5-5
+AIK-MoDo 6-4
+Luleå-HV71 5-1
+Frölunda-Djurgården 3-1
+Brynäs-Västerås 6-1
+Malmö-Färjestad 1-3
+16/10 
+Djurgården-Leksand 5-3
+MoDo-Södertälje 3-5
+Frölunda-Malmö 4-2
+Luleå-Brynäs 1-5
+Västerås-AIK 2-1
+Färjestad-HV71 3-3
+19/10 
+MoDo-Leksand 2-5
+Södertälje-Färjestad 2-3
+Brynäs-Malmö 2-1 sd
+Västerås-Frölunda 1-6
+Djurgården-Luleå 5-1
+HV71-AIK 1-0
+21/10 
+Djurgården-Färjestad 3-3
+23/10 
+Färjestad-MoDo 3-1
+Leksand-HV71 5-3
+Djurgården-AIK 2-1
+Luleå-Västerås 2-0
+Frölunda-Brynäs 4-2
+Malmö-Södertälje 5-2
+25/10 
+Malmö-MoDo 2-1 sd
+HV71-Södertälje 2-1
+Leksand-Västerås 0-0
+Brynäs-AIK 3-3
+26/10 
+AIK-Frölunda 1-0 sd
+Leksand-Brynäs 5-4
+Färjestad-Västerås 3-3
+Södertälje-Djurgården 2-3
+MoDo-HV71 7-1
+Luleå-Malmö 5-3
+28/10 
+AIK-Malmö 1-3
+30/10 
+Djurgården-MoDo 3-2
+Västerås-Södertälje 1-1
+Brynäs-Färjestad 3-4
+Frölunda-Leksand 2-2
+Luleå-AIK 1-1
+Malmö-HV71 2-3
+ 1/11 
+Leksand-Luleå 5-6
+Färjestad-Frölunda 5-2
+Södertälje-Brynäs 2-3
+MoDo-Västerås 1-2
+HV71-Djurgården 2-2
+ 2/11 
+Brynäs-MoDo 2-0
+Frölunda-Södertälje 4-2
+Färjestad-Luleå 5-4
+AIK-Leksand 1-4
+Malmö-Djurgården 2-3
+Västerås-HV71 1-2
+ 4/11 
+Frölunda-Luleå 2-3
+13/11 
+Färjestad-AIK 2-1
+Södertälje-Luleå 2-2
+MoDo-Frölunda 4-3
+HV71-Brynäs 2-4
+Djurgården-Västerås 5-3
+Leksand-Malmö 3-1
+15/11 
+Luleå-MoDo 2-2
+Färjestad-Leksand 7-2
+Malmö-Västerås 10-2
+Brynäs-Djurgården 0-6
+Frölunda-HV71 4-4
+17/11 
+AIK-Södertälje 5-2
+18/11 
+Djurgården-Leksand 2-1
+20/11 
+Södertälje-Leksand 1-1
+MoDo-AIK 3-5
+HV71-Luleå 3-3
+Djurgården-Frölunda 3-3
+Västerås-Brynäs 5-2
+Färjestad-Malmö 3-3
+23/11 
+Södertälje-MoDo 2-4
+Malmö-Frölunda 2-2
+Brynäs-Luleå 0-3
+AIK-Västerås 2-3 sd
+Leksand-Djurgården 5-4
+HV71-Färjestad 2-2
+27/11 
+Leksand-MoDo 5-0
+Färjestad-Södertälje 5-1
+Malmö-Brynäs 4-2
+Frölunda-Västerås 1-2
+Luleå-Djurgården 4-4
+AIK-HV71 3-2
+29/11 
+MoDo-Färjestad 3-2
+HV71-Leksand 4-3
+Västerås-Luleå 3-2
+Brynäs-Frölunda 4-4
+Södertälje-Malmö 1-2
+30/11 
+Västerås-Frölunda 1-1
+Luleå-Färjestad 1-4
+MoDo-Malmö 4-2
+Brynäs-HV71 4-2
+Södertälje-AIK 2-0
+ 2/12 
+AIK-Djurgården 3-1
+ 4/12 
+AIK-Brynäs 1-2
+HV71-MoDo 3-0
+Malmö-Luleå 2-2
+Färjestad-Djurgården 5-1
+Leksand-Västerås 6-2
+Frölunda-Södertälje 6-1
+ 7/12 
+Västerås-Färjestad 2-1
+Djurgården-Malmö 5-1
+Luleå-HV71 1-5
+MoDo-AIK 4-0
+Brynäs-Södertälje 4-1
+Leksand-Frölunda 2-1
+ 9/12 
+Djurgården-AIK 7-1
+11/12 
+Södertälje-MoDo 4-2
+AIK-Luleå 0-2
+HV71-Djurgården 5-1
+Malmö-Västerås 5-4 sd
+Färjestad-Leksand 5-3
+Frölunda-Brynäs 9-2
+13/12 
+Västerås-HV71 2-2
+Luleå-Södertälje 4-2
+MoDo-Brynäs 1-2 sd
+Färjestad-Frölunda 1-4
+Leksand-Malmö 5-4 sd
+ 8/1  
+HV71-Malmö 7-5
+Färjestad-Frölunda 3-3
+Brynäs-Leksand 8-2
+Västerås-Södertälje 1-2
+AIK-Djurgården 1-4
+MoDo-Luleå 2-2
+11/1  
+Brynäs-Luleå 3-1
+Södertälje-Djurgården 4-2
+Malmö-Färjestad 5-1
+HV71-Leksand 4-9
+12/1  
+AIK-Västerås 0-3
+13/1  
+Frölunda-MoDo 2-3
+15/1  
+Västerås-Södertälje 2-2
+Djurgården-Brynäs 2-3
+Luleå-MoDo 2-4
+Malmö-Frölunda 5-0
+Färjestad-HV71 2-3 sd
+Leksand-AIK 5-1
+18/1  
+MoDo-Djurgården 4-0
+Brynäs-Västerås 5-3
+Södertälje-Leksand 5-5
+AIK-Färjestad 4-2
+HV71-Malmö 3-0
+Frölunda-Luleå 4-0
+20/1  
+Västerås-Djurgården 1-2
+AIK-Frölunda 2-2
+Södertälje-HV71 8-6
+Malmö-Brynäs 8-2
+Färjestad-MoDo 1-2
+Luleå-Leksand 4-2
+22/1  
+Västerås-MoDo 6-3
+Djurgården-Luleå 4-3
+HV71-Frölunda 4-6
+Malmö-AIK 5-0
+Färjestad-Södertälje 9-2
+Leksand-Brynäs 6-5
+24/1  
+Färjestad-Malmö 7-1
+MoDo-Frölunda 6-2
+Västerås-AIK 1-7
+25/1  
+Djurgården-Södertälje 2-1
+Leksand-HV71 6-2
+Luleå-Brynäs 3-2
+27/1  
+Luleå-Västerås 3-3
+MoDo-Leksand 2-6
+Brynäs-Färjestad 3-3
+Södertälje-Malmö 2-2
+AIK-HV71 5-2
+Frölunda-Djurgården 2-2
+29/1  
+Frölunda-Västerås 3-2
+Leksand-Djurgården 2-3
+Luleå-Färjestad 2-2
+Malmö-MoDo 4-1
+HV71-Brynäs 5-2
+AIK-Södertälje 1-3
+31/1  
+Brynäs-AIK 7-1
+MoDo-HV71 3-0
+Luleå-Malmö 1-3
+Djurgården-Färjestad 7-1
+Västerås-Leksand 7-1
+Södertälje-Frölunda 4-4
+ 1/2  
+Färjestad-Västerås 6-0
+Malmö-Djurgården 2-3 sd
+HV71-Luleå 4-3
+AIK-MoDo 1-1
+Södertälje-Brynäs 2-3
+Frölunda-Leksand 1-2
+ 3/2  
+MoDo-Södertälje 6-1
+Luleå-AIK 4-0
+Djurgården-HV71 5-2
+Västerås-Malmö 4-2
+Leksand-Färjestad 6-3
+Brynäs-Frölunda 3-3
+ 5/2  
+HV71-Västerås 6-3
+Djurgården-AIK 2-1
+Södertälje-Luleå 3-2 sd
+Brynäs-MoDo 2-4
+Frölunda-Färjestad 3-4
+Malmö-Leksand 2-2
+26/2  
+Södertälje-Västerås 1-1
+Brynäs-Djurgården 4-3
+MoDo-Luleå 3-1
+Frölunda-Malmö 4-3
+HV71-Färjestad 3-6
+AIK-Leksand 3-2
+28/2  
+Djurgården-MoDo 3-6
+Västerås-Brynäs 0-4
+Leksand-Södertälje 4-3
+Färjestad-AIK 3-4
+Malmö-HV71 1-3
+Luleå-Frölunda 1-1
+ 1/3  
+Djurgården-Västerås 6-1
+Frölunda-AIK 5-1
+HV71-Södertälje 8-4
+Brynäs-Malmö 1-2 sd
+MoDo-Färjestad 4-3
+Leksand-Luleå 3-3
+ 3/3  
+AIK-Malmö 2-2
+Brynäs-Leksand 4-0
+Luleå-Djurgården 4-2
+MoDo-Västerås 6-1
+Södertälje-Färjestad 1-2
+Frölunda-HV71 5-0
+ 5/3  
+Västerås-Luleå 0-2
+Leksand-MoDo 3-2 sd
+Färjestad-Brynäs 3-1
+Malmö-Södertälje 4-2
+HV71-AIK 2-0
+Djurgården-Frölunda 3-2

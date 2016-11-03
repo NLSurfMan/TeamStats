@@ -1,0 +1,4 @@
+Matchfile=data/seriea97.txt
+Line1=14
+LeagueName=Serie A
+Season=1996-97

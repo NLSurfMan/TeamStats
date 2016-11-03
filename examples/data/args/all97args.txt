@@ -1,0 +1,5 @@
+Matchfile=data/all97.txt
+Line1=10
+Line2=12
+LeagueName=Allsvenskan
+Season=1997

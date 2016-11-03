@@ -1,0 +1,6 @@
+Matchfile=data/elit97.txt
+Winpoints=2
+Line1=8
+Line2=10
+LeagueName=Elitserien
+Season=1996-97
