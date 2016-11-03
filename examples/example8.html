@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>TeamStats - Example</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+appletLoaded=false
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#ffffff"
+  onLoad="document.TeamStats.loadLeaguefile('data/args/all96args.txt');
+    document.TeamStats.loadLeaguefile('data/args/all95args.txt');
+    appletLoaded=true">
+
+<CENTER>[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H3 ALIGN=center>Example 8</H3>
+
+<CENTER>
+
+<FORM NAME=selectForm>Season:
+<SELECT NAME=leagueSelect
+   onChange="if(appletLoaded)
+               document.TeamStats.setLeaguefile('data/args/'+this.options[this.selectedIndex].value)
+             else
+               window.alert('Wait until TeamStats finished loading')">
+   <OPTION SELECTED VALUE=all97args.txt> 1997
+   <OPTION VALUE=all96args.txt> 1996
+   <OPTION VALUE=all95args.txt> 1995
+</SELECT>
+</FORM>
+
+<APPLET CODE="embe.ts.TeamStats.class" NAME=TeamStats WIDTH=560 HEIGHT=480>
+<PARAM NAME=Leaguefile VALUE=data/args/all97args.txt>
+</APPLET>
+
+</CENTER>
+
+<BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>

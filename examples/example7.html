@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>TeamStats - Example</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+appletLoaded=false
+
+function compare(home, away) {
+  if(appletLoaded) {
+    document.TeamStats.showCompare(0, home, away)
+  }
+  else {
+    window.alert("Wait until TeamStats finished loading")
+  }
+}
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" onLoad="appletLoaded=true">
+<CENTER>[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H3 ALIGN=center>Example 7</H3>
+
+<A HREF="javascript:compare('Arsenal', 'Everton')">Arsenal - Everton</A><BR>
+<A HREF="javascript:compare('Tottenham', 'Leeds')">Tottenham - Leeds</A><BR>
+<A HREF="javascript:compare('Manchester U', 'Aston Villa')">Manchester U - Aston Villa</A><BR>
+
+<FORM>
+<INPUT TYPE="button" VALUE="Newcastle - Blackburn" onClick="compare('Newcastle', 'Blackburn')"><BR>
+<BR>
+<INPUT TYPE="button" VALUE="Liverpool - Derby" onClick="compare('Liverpool', 'Derby')"><BR>
+</FORM>
+
+<BR><BR>
+<CENTER>
+
+<APPLET CODE="embe.ts.TeamStats.class" NAME=TeamStats WIDTH=560 HEIGHT=480>
+<PARAM NAME=Leaguefile VALUE=data/args/pl97args.txt>
+</APPLET>
+
+</CENTER>
+
+<BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>

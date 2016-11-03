@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Description" CONTENT="TeamStats is a Java-applet that displays tables, matches and statistics from a league in some sport.">
+<TITLE>TeamStats - Parameters</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FBFFB1">
+<CENTER>[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H1 ALIGN=CENTER>TeamStats</H1>
+
+<H2>Setting parameters</H2>
+
+<P>Parameters can be of two types. They control either the league or the
+program. The parameters that control the league can, instead of being set in the HTML-code, be placed in a <A HREF="#leaguefile">parameterfile</A>.
+The only parameter that <B>has</B> to be set is <TT>Matchfile</TT>. All the others
+can be skipped. If a parameter is not set it will be given a default value.
+
+<H3>1. League parameters</H3>
+
+<H4>1.1 LeagueName</H4>
+<DL>
+<DT><I>Description</I><DD>Gives the name of the league.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=LeagueName VALUE=&quot;Premier League&quot;&gt;</TT>
+</DL>
+
+<H4>1.2 Season</H4>
+<DL>
+<DT><I>Description</I><DD>Gives the season of the league. This is a string and
+it can be given in any format, for example: 1996-97, 96/97, 1997 etc.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Season VALUE=&quot;1996-97&quot;&gt;</TT>
+</DL>
+
+<H4>1.3 Matchfile</H4>
+<DL>
+<DT><I>Description</I><DD>The name of the file that contains the matches for
+this league (<A HREF="matchfile.html">here</A> is a description of the
+matchfile). The filename is relative to the HTML-document.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Matchfile VALUE=premier.txt&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Matchfile VALUE=soccer/italy/serie_A.txt&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Matchfile VALUE=../../files/matches.ser&gt;</TT>
+</DL>
+
+<H4>1.4 LineX</H4>
+<DL>
+<DT><I>Description</I><DD>Gives the position of one or more qualifying lines
+in the table. A line is placed after the table position that is given by
+VALUE. You can set this parameter several times but the 'X' in <TT>LineX</TT> must
+be replaced by a number. The first line is called <TT>Line1</TT> the second one
+<TT>Line2</TT> and so on.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Line1 VALUE=1&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Line2 VALUE=2&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Line3 VALUE=10&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Line4 VALUE=12&gt;</TT>
+</DL>
+
+<H4><A NAME="sudden">1.5 SuddenDeath</A></H4>
+<DL>
+<DT><I>Description</I><DD>Use this parameter to specify that the league uses Sudden Death. <A HREF="matchfile.html#sudden">Here is information</A> on how to specify Sudden Death-matches in the matchfile. Use the <A HREF="#ShowSDInTable">ShowSDInTable-parameter</A> if you do not want to see columns for Sudden Death in the table.
+<DT><I>Default</I><DD>False
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=SuddenDeath VALUE=true&gt;</TT>
+</DL>
+
+<H4><A NAME="ShowSDInTable">1.6 ShowSDInTable</A></H4>
+<DL>
+<DT><I>Description</I><DD>This parameters specifies if you want to see extra columns for sudden death results in the table. If you don't want to have extra columns set this parameter to false. Note that this parameter has no meaning if <A HREF="#sudden">SuddenDeath</A> is not set to true.
+<DT><I>Default</I><DD>True
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=ShowSDInTable VALUE=false&gt;</TT>
+</DL>
+
+<H4>1.7 Winpoints</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the number of points a team gets for winning a match.
+<DT><I>Default</I><DD>3
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Winpoints VALUE=2&gt;</TT>
+</DL>
+
+<H4>1.8 Drawpoints</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the number of points a team gets when a match ends in a draw.
+<DT><I>Default</I><DD>1
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Drawpoints VALUE=2&gt;</TT>
+</DL>
+
+<H4>1.9 Losspoints</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the number of points a team gets for loosing a match.
+<DT><I>Default</I><DD>0
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Losspoints VALUE=1&gt;</TT>
+</DL>
+
+<H4>1.10 SDWinpoints</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the number of points a team gets for winning a match in Sudden Death.
+<DT><I>Default</I><DD>3
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=SDWinpoints VALUE=2&gt;</TT>
+</DL>
+
+<H4>1.11 SDLosspoints</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the number of points a team gets for loosing a match in Sudden Death.
+<DT><I>Default</I><DD>0
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=SDLosspoints VALUE=2&gt;</TT>
+</DL>
+
+<H4>1.12 GDiffSort</H4>
+<DL>
+<DT><I>Description</I><DD>A parameter that tells TeamStats how to separate two
+teams when they have the same amount of points. If the parameter is missing
+or set to &quot;true&quot;, TeamStats will use goal difference to separate
+the teams. If the value is &quot;false&quot;, scored goals is used to separate
+the teams. (As far as I know this is only used in the English 1st Division).
+<DT><I>Default</I><DD>True
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=GDiffSort VALUE=false&gt;</TT>
+</DL>
+
+<H4>1.13 HideX</H4>
+<DL>
+<DT><I>Description</I><DD>This parameter is used to hide teams. In some leagues
+teams are degraded or promoted during the season. Then you don't want the
+team to show in the table but their results should still count. To hide
+a team just give the name of the team after VALUE. When a team is hidden
+two things happens: the team doesn't show in the table and is not selectable
+in the dropdown-boxes where you select teams. Other than that nothing changes.
+You can hide several teams. Note that TeamStats doesn't give any
+feedback to the user when a team is hidden. So it could be a good idea
+to place an explanatory text in connection to TeamStats.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Hide1 VALUE=&quot;Leeds&quot;&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Hide2 VALUE=&quot;West Ham&quot;&gt;</TT>
+</DL>
+
+<H4>1.14 PointsX</H4>
+<DL>
+<DT><I>Description</I><DD>With this parameter you can give bonus- or penaltypoints
+to a team. In some leagues teams can bring points from earlier leagues
+or get other kind of bonus points. It also happens that teams get penaltypoints
+for different reasons. To give extra points just write the teams name followed
+by the points within parenthesis. To give penalty points give a negative
+number. These extra points will only affect the current table, i.e. when
+All matches and All rounds is selected. The home, away, first and last
+tables will not be affected by extra points.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Points1 VALUE=&quot;Arsenal(3)&quot;&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Points2 VALUE=&quot;Aston Villa(-2)&quot;&gt;</TT>
+</DL>
+
+<H4>1.15 MarkX</H4>
+<DL>
+<DT><I>Description</I><DD>Parameter for marking a team. The team will
+be displayed in bold in the table.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Mark1 VALUE=&quot;Ipswich&quot;&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Mark2 VALUE=&quot;Liverpool&quot;&gt;</TT>
+</DL>
+
+<H4>1.16 DateChar</H4>
+<DL>
+<DT><I>Description</I><DD>This parameter decides which character is to be used as a date-separator. If no character is specified (default) TeamStats will assume that the matchfile doesn't contain any dates. Read more about dates <A HREF="matchfile.html#dates">here</A>.
+<DT><I>Default</I><DD>not specified
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=DateChar VALUE="/"&gt;</TT><BR>
+<TT>&lt;PARAM NAME=DateChar VALUE="."&gt;</TT>
+</DL>
+
+<H4><IMG SRC="pics/new.gif" HEIGHT=11 WIDTH=48 ALT="New!">1.17 HideDraws</H4>
+<DL>
+<DT><I>Description</I><DD>This parameter tells TeamStats to not display any information about draws. This is useful for sports where matches cannot end with a draw e.g. basketball.
+<DT><I>Default</I><DD>false
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=HideDraws VALUE="true"&gt;</TT>
+</DL>
+
+<H3>Program parameters</H3>
+
+<H4>2.1 Image</H4>
+<DL>
+<DT><I>Description</I><DD>The name of the image that is to be used as a background image. The name of the image file is relative to the HTML-document. The image format should be either GIF or JPEG.
+<DT><I>Default</I><DD>-
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Image VALUE=&quot;myPic.gif&quot;&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Image VALUE=pics/league.jpg&gt;</TT><BR>
+<TT>&lt;PARAM NAME=Image VALUE=../../files/bgpic.gif&gt;</TT>
+</DL>
+
+<H4>2.2 HideBorder</H4>
+<DL>
+<DT><I>Description</I><DD>Give the value &quot;True&quot; if you <B>don't</B>
+want a border drawn around the applet.
+<DT><I>Default</I><DD>False
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=HideBorder VALUE=True&gt;</TT>
+</DL>
+
+<H4>2.3 NoPrevSeason</H4>
+<DL>
+<DT><I>Description</I><DD>Give the value &quot;True&quot; if you don't want TeamStats
+to look for previous matches between teams in other leagues. Read more
+about this parameter <A HREF="multi.html">here</A>.
+<DT><I>Default</I><DD>False
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=NoPrevSeason VALUE=True&gt;</TT>
+</DL>
+
+<H4>Color parameters</H4>
+
+<P>The following parameters can be used to change the colors of TeamStats. Color values are specified in the same way as in HTML i.e. in hexcode. It's important to know that these parameters can behave very differently on different platforms and with different browsers. For instance, the <TT>ButtonCol</TT> and <TT>ButtonTextCol</TT> parameters don't work at all with version 3 and earlier of both Navigator and Internet Explorer on Win95. On those systems the buttons will always be gray. So if you use these parameters it's very important that you test the applet on a couple of different systems because what might look nice on your system might not look so nice on another system.
+
+<H4>2.4 Backcol</H4>
+<DL>
+<DT><I>Description</I><DD>Parameter that sets the background color.
+<DT><I>Default</I><DD>White
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Backcol VALUE=1a34ef&gt;</TT>
+</DL>
+
+<H4>2.5 Forecol</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the foreground color. This is the color that controls (drop-down-boxes, radio buttons etc.) use.
+<DT><I>Default</I><DD>Black
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Forecol VALUE=1a34ef&gt;</TT>
+</DL>
+
+<H4>2.6 Primcol</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the primary drawing color. This color is used for most of the data that is drawn on the screen.
+<DT><I>Default</I><DD>Blue
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Primcol VALUE=1a34ef&gt;</TT>
+</DL>
+
+<H4>2.7 Seccol</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the secondary drawing color. This color is used for headlines and labels.
+<DT><I>Default</I><DD>Black
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=Seccol VALUE=1a34ef&gt;</TT>
+</DL>
+
+<H4>2.8 ButtonCol</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the color of the four main buttons on the top of the screen.
+<DT><I>Default</I><DD>Light gray
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=ButtonCol VALUE=1a34ef&gt;</TT>
+</DL>
+
+<H4>2.9 ButtonTextCol</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the color of the text in the main buttons.
+<DT><I>Default</I><DD>Black
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=ButtonTextCol VALUE=1a34ef&gt;</TT>
+</DL>
+
+<H4>2.10 ButtonSelectCol</H4>
+<DL>
+<DT><I>Description</I><DD>Sets the color of the rectangle that is drawn around the selected button.
+<DT><I>Default</I><DD>Blue
+<DT><I>Example</I><DD><TT>&lt;PARAM NAME=ButtonSelectCol VALUE=1a34ef&gt;</TT>
+</DL>
+
+<H2><A NAME="leaguefile"></A>Setting parameters in a parameterfile</H2>
+
+<P>League parameters can also be given in a parameterfile. The main reason
+to use a parameterfile is that it makes it possible to use the TeamStats-functions
+<TT>setLeaguefile()</TT> and <TT>loadLeaguefile()</TT> from JavaScript (<A HREF="jscript.html">here</A>
+is all information on how to use TeamStats with JavaScript).
+
+<P>The parameterfile is a normal text file. Each parameter is placed on
+a single line that contains the parameter name, an equal sign (=) and finally
+the parameter value, for example:
+
+<PRE>Matchfile=files/pl97.txt</PRE>
+
+<P>Note that there can be no spaces on either side of the equal sign
+or in front of the parameter name. You should also not use any quotation marks.
+
+<P>When you have created a parameter file you give it's location with the
+<TT>Leaguefile</TT> parameter:
+
+<PRE>&lt;PARAM NAME=Leaguefile VALUE=pl97params.txt&gt;</PRE>
+
+<H3>Example:</H3>
+
+<P>If you have HTML-code looking like this:
+
+<PRE>&lt;APPLET CODE=&quot;embe.ts.TeamStats.class&quot; WIDTH=560 HEIGHT=480&gt;
+&lt;PARAM NAME=Matchfile VALUE=../data/myleague.txt&gt;
+&lt;PARAM NAME=Line1 VALUE=4&gt;
+&lt;PARAM NAME=Line2 VALUE=17&gt;
+&lt;PARAM NAME=Winpoints VALUE=2&gt;
+&lt;PARAM NAME=Hide1 VALUE=&quot;Leeds&quot;&gt;
+&lt;PARAM NAME=Points1 VALUE=&quot;Ipswich Town(3)&quot;&gt;
+&lt;PARAM NAME=Backcol VALUE=1a34ef&gt;
+&lt;/APPLET&gt;</PRE>
+
+<P>You can create a textfile named, for instance, <TT>LeagueArgs.txt</TT> with
+the following contents:
+
+<PRE>Matchfile=../data/myleague.txt
+Line1=4
+Line2=17
+Winpoints=2
+Hide1=Leeds
+Points1=Ipswich Town(3)</PRE>
+
+<P>Then change the HTML-code to this:
+
+<PRE>&lt;APPLET CODE=&quot;embe.ts.TeamStats.class&quot; WIDTH=560 HEIGHT=480&gt;
+&lt;PARAM NAME=Leaguefile VALUE=LeagueArgs.txt&gt;
+&lt;PARAM NAME=Backcol VALUE=1a34ef&gt;
+&lt;/APPLET&gt;</PRE>
+
+<BR><BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>

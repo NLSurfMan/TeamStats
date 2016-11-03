@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Description" CONTENT="TeamStats is a Java-applet that displays tables, matches and statistics from a league in some sport.">
+<TITLE>TeamStats - Program</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FBFFB1">
+<CENTER>
+[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H1 ALIGN=CENTER>
+TeamStats</H1>
+
+<H2>The program</H2>
+
+<P>The program consists of a number of Java class-files. These files <B>must</B>
+be placed in a directory named <TT>ts</TT> (except the files <TT>HyperLink.class</TT>, <TT>ModeButton.class</TT> and <TT>ModePanel.class</TT> who go into the <TT>ui</TT> directory). The <TT>ts</TT> and <TT>ui</TT> directories
+<B>must</B> be placed in a directory named <TT>embe</TT>. The <TT>embe</TT> directory
+can be placed anywhere. The <TT>embe</TT>, <TT>ts</TT> and <TT>ui</TT> directories
+should be created automatically when you unzip the zip-file. If they aren't
+you can create the directories manually.
+
+<PRE>Example of directories:  c:/program/TeamStats/embe/ts
+                         c:/embe/ts
+                         /home/bob/embe/ts</PRE>
+
+<H2>The HTML-document</H2>
+
+<P>To insert TeamStats in a HTML-document you use the APPLET-tag. It has
+the following syntax:
+
+<PRE>&lt;APPLET CODEBASE=&quot;URL to code&quot; CODE=&quot;appletfile&quot; WIDTH=&quot;pixels&quot; HEIGHT=&quot;pixels&quot;&gt;
+&lt;PARAM NAME=&quot;parametername1&quot; VALUE=&quot;parametervalue&quot;&gt;
+&lt;PARAM NAME=&quot;parametername2&quot; VALUE=&quot;parametervalue&quot;&gt;
+...
+&lt;/APPLET&gt;</PRE>
+
+<P>There are more attributes available to the APPLET-tag. Anyone interested
+can find them <A HREF="http://www.w3c.org/TR/REC-html32.html#applet">here</A>.
+
+<H4>CODEBASE</H4>
+
+<P>Optional attribute that states where the program is placed. In the TeamStats case it is the URL to the directory that contains the <TT>embe</TT> directory.
+The URL can be given relatively to the HTML-documents URL, for example
+CODEBASE=&quot;../program&quot;. If this attribute is missing the URL to
+the HTML-document is used to locate the code. That means that the <TT>embe</TT> directory
+is assumed to be in the same directory as the HTML-document.
+
+<H4>CODE</H4>
+
+<P>Required attribute that gives the name of the file to execute. The value
+of this attribute <B>must</B> be CODE=&quot;embe.ts.TeamStats.class&quot;.
+
+<H4>WIDTH</H4>
+
+<P>Gives the width of the Applet. The value should be WIDTH=560.
+
+<H4>HEIGHT</H4>
+
+<P>Gives the height of the Applet. The value should be HEIGHT=480.
+
+<H4>PARAM</H4>
+
+<P>This attribute is used to give parameters to TeamStats. The word PARAM
+is followed by NAME and then the name of the parameter you want to set.
+Then you write VALUE and the value of the parameter. In TeamStats some parameters can
+be set several times, for example <TT>LineX</TT>. Just replace the 'X' with a number
+that is increased every time you use the parameter. The first parameter will be <TT>Line1</TT>, the next
+one <TT>Line2</TT> and so on.
+
+<P><A HREF="params.html">Here are all the parameters</A> that can be set.
+
+<H2>Use archive-files to speed up applet loading</H2>
+
+<P>One reason for slow loading speed is that most applets consists of several
+files. TeamStats, for instance, consists of 15 different files that are
+transferred across the net one at a time. The solution to this problem is to place all the applet-files
+in an archive and then transfer the archive. Unfortunately the two major
+browsers (Navigator and Internet Explorer) support different archive types.
+Navigator uses Zip-files while IE uses Microsoft's
+own Cabinet fileformat (CAB). However it is possible to combine the
+two methods and thereby ensure that the applet is transferred as quickly
+as possible.
+
+<P>Both Zip- and Cab-versions of the program are included in TeamStats.
+They are named <TT>ts.zip</TT> and <TT>ts.cab</TT> and are placed in the <TT>embe</TT> directory.
+<B>Don't</B> unpack these files. It's okay to move the files to another
+location.
+
+<H3>Netscape Navigator and Zip-files</H3>
+
+<P>You use the ARCHIVE-attribute in the APPLET-tag to give the location
+of the Zip-file. If <TT>ts.zip</TT> is in the <TT>embe</TT> directory it will look like this:
+
+<PRE>&lt;APPLET CODE=&quot;embe.ts.TeamStats.class&quot; ARCHIVE=&quot;embe/ts.zip&quot; WIDTH=560 HEIGHT=480&gt;</PRE>
+
+<P>Navigator will now load the entire program in one transfer instead of
+in several. It's important to leave the 'standard' class-files where they
+are. They will be used by browsers who don't understand the ARCHIVE-attribute
+or if something is wrong with the Zip-file.
+
+<H3>MS Internet Explorer and Cab-files</H3>
+
+<P>In the APPLET-tag you use &lt;PARAM NAME=cabbase&gt; to give the location
+of the Cab-file. If <TT>ts.cab</TT> is placed in the <TT>embe</TT> directory it will look
+like this:
+
+<PRE>&lt;APPLET CODE=&quot;embe.ts.TeamStats.class&quot; WIDTH=560 HEIGHT=480&gt;
+&lt;PARAM NAME=cabbase VALUE=&quot;embe/ts.cab&quot;&gt;</PRE>
+
+<H3>Combining the two methods</H3>
+
+<P>The best solution is to combine the two methods and thereby ensuring
+optimal download performance. It can look like this:
+
+<PRE>&lt;APPLET CODE=&quot;embe.ts.TeamStats.class&quot; ARCHIVE=&quot;embe/ts.zip&quot; WIDTH=560 HEIGHT=480&gt;
+&lt;PARAM NAME=cabbase VALUE=&quot;embe/ts.cab&quot;&gt;</PRE>
+
+<P>The two browsers can now use their own method to load the program. Once
+again note that the 'standard' class-files <B>not</B> should be removed.
+
+<P>Note that this not is a TeamStats feature, it can be used with
+any Java-applet.
+
+<BR><BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>

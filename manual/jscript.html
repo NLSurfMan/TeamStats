@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Description" CONTENT="TeamStats is a Java-applet that displays tables, matches and statistics from a league in some sport.">
+<TITLE>TeamStats - JavaScript</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FBFFB1">
+<CENTER>
+[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H1 ALIGN=CENTER>TeamStats</H1>
+
+<H2>Control TeamStats via JavaScript</H2>
+
+<P>This document describes the functions that can be used to control TeamStats
+via JavaScript. It's presumed that the reader has some knowledge of JavaScript.
+Anyone who wants to learn more about JavaScript can try <A HREF="http://home.netscape.com/eng/mozilla/3.0/handbook/javascript/index.html">Netscape's
+JavaScript pages</A> or this <A HREF="http://www.yahoo.com/Computers_and_Internet/Programming_Languages/JavaScript/">link collection</A>. Don't worry if you're not interested in this or think
+it's to complicated. This is an 'extra' feature and it's not necessary
+to neither understand nor use it.
+
+<P>The first thing you need to do is to give the Applet a name so you can
+refer to it in your JavaScript code:
+
+<PRE>&lt;APPLET&nbsp;CODE=&quot;embe.ts.TeamStats.class&quot; NAME=&quot;TeamStats&quot; WIDTH=560 HEIGHT=480&gt;
+                                       ^^^^^^^^^^^^^^^^ </PRE>
+
+<P>When you want to call a function you write like this:
+
+<PRE>document.TeamStats.functionName()</PRE>
+
+<P>You don't have to use the name &quot;TeamStats&quot;, any name will
+do. At the moment TeamStats has the following functions.
+
+<H3>setLeaguefile(String filename)</H3>
+
+<P>This function is used to tell TeamStats to load and show a new league.
+The only argument it takes is the name of the <A HREF="params.html#leaguefile">parameterfile</A>
+that contains the league information. A function call can look like this:
+
+<PRE>document.TeamStats.setLeaguefile('myleagueargs.txt')</PRE>
+
+<P>By using this function you can use one Applet to display several different
+leagues. <A HREF="example5.html">Here</A> and <A HREF="example6.html">here</A>
+are examples of how it might look.
+
+<H3>loadLeaguefile(String filename)</H3>
+
+<P>Works in the same way as <TT>setLeaguefile()</TT> with the difference
+that the new league is not displayed. It's downloaded in the background. <A HREF="example8.html">This</A> is an example of <TT>loadLeaguefile()</TT>.
+
+<H3>showTable(int matches, int rounds, int number)</H3>
+
+<P>The function makes TeamStats show Table-mode. The arguments that the
+function take corresponds to the settings you make in the menus in Table-mode.
+All arguments should be integers and they have the following meaning:
+
+<DL>
+<DT><B>int matches</B>
+<DD>0 = all matches, 1 = home matches, 2 = away matches
+<DT><B>int rounds</B>
+<DD>0 = all, 1 = first, 2 = last
+<DT><B>int number</B>
+<DD>The number of matches to show when first or last is selected
+</DL>
+
+<P>If you give an invalid value the setting will not change. Examples of
+<TT>showTable()</TT>:
+
+<P>Show table without changing any settings:<BR>
+<TT>document.TeamStats.showTable(-1, -1, -1)</TT>
+
+<P>Show the current table:<BR>
+<TT>document.TeamStats.showTable(0, 0, -1)</TT>
+
+<P>Show table of the last ten matches:<BR>
+<TT>document.TeamStats.showTable(0, 2, 10)</TT>
+
+<P>Show table of the six first home matches:<BR>
+<TT>document.TeamStats.showTable(1, 1, 6)</TT>
+
+<H3>showMatches(string team, int matches, int result)</H3>
+
+<P>Shows Match-mode. The arguments of the function are as follow:
+
+<DL>
+<DT><B>string team</B>
+<DD>The name of the team whose matches are to be shown. The
+name has to be exactly the same as the name used in the matchfile. If you
+want to show all matches use the string 'All'.
+<DT><B>int matches</B>
+<DD>0 = all matches, 1 = home matches, 2 = away matches
+<DT><B>int result</B>
+<DD>0 = all, 1 = won, 2 = drawn, 3 = lost
+</DL>
+
+<P>Examples:
+
+<P>Show matches without changing any settings:<BR>
+<TT>document.TeamStats.showMatches(' ', -1, -1)</TT>
+
+<P>Show all matches:<BR>
+<TT>document.TeamStats.showMatches('All', -1, -1)</TT>
+
+<P>Show all Leeds home matches:<BR>
+<TT>document.TeamStats.showMatches('Leeds', 1, 0)</TT>
+
+<P>Show Aston Villas away losses:<BR>
+<TT>document.TeamStats.showMatches('Aston Villa', 2, 3)</TT>
+
+<H3>showStats()</H3>
+
+<P>Shows Statistics-mode. The function has no arguments. Example:<BR>
+
+<TT>document.TeamStats.showStats()</TT>
+
+<H3>showCompare(int mode, string hometeam, string awayteam)</H3>
+
+<P>Shows Compare-mode. The arguments of the function are as follow:
+
+<DL>
+<DT><B>int mode</B>
+<DD>0 = statistics, 1 = home/away stats, 2 = previous matches
+<DT><B>string hometeam</B>
+<DD>The name of the hometeam
+<DT><B>string awayteam</B>
+<DD>The name of the awayteam
+</DL>
+
+<P>Examples:
+
+<P>Show compare without changing any settings:<BR>
+<TT>document.TeamStats.showCompare(-1, ' ', ' ')</TT>
+
+<P>Show statistics between Derby and Everton:<BR>
+<TT>document.TeamStats.showCompare(0, 'Derby', 'Everton')</TT>
+
+<P>Show previous matches between West Ham and Arsenal:<BR>
+<TT>document.TeamStats.showCompare(2, 'West Ham', 'Arsenal')</TT>
+
+<P><A HREF="example7.html">Here</A> is another example of how you can use
+<TT>showCompare()</TT>.
+
+<H3>Comments</H3>
+
+<P>If you try to call a TeamStats-function before the Applet has finished
+loading some strange results may occur. A way to protect yourself from
+this is to have a boolean variable that is first set to <TT>false</TT> and then
+changed to <TT>true</TT> in the <TT>onLoad</TT>-event in &lt;BODY&gt;. The variable is then
+checked before any function is called. You can se how it works if you study
+the code of <A HREF="example7.html">this page</A>.
+
+<P>The use of these functions may vary. The examples given here are just
+some of the possibilities that exists. The thought behind these functions
+is that they should provide a way to integrate TeamStats with the rest
+of the information available. If you, for instance, have pages with information
+about each team in the league you can have a link that runs TeamStats and
+shows the matches of the team. It's pretty much up to each and everyone
+to figure out how to use these functions in the best way.
+
+<BR><BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>

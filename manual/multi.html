@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Description" CONTENT="TeamStats is a Java-applet that displays tables, matches and statistics from a league in some sport.">
+<TITLE>TeamStats - Multiple leagues</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FBFFB1">
+<CENTER>[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H1 ALIGN=CENTER>TeamStats</H1>
+
+<H2>Using TeamStats with multiple leagues</H2>
+
+<H3>Loading additional leagues</H3>
+
+<P>As of v1.03 you can use TeamStats with multiple leagues at the same
+time. You don't have to put different leagues on different pages. To load
+additional leagues into TeamStats (aside from the one given in the Applet-tag)
+you use the JavaScript-functions <TT>setLeaguefile()</TT> and <TT>loadLeaguefile()</TT>.
+<TT>setLeaguefile()</TT> first downloads the league and then displays it.
+Because the league data is transported across the net there is a small
+delay before the league is displayed. If the league already has been downloaded
+it will be displayed immediately. <TT>loadLeagufile()</TT> will download
+the league in the background without displaying it. To display the league
+you have to use <TT>setLeaguefile()</TT>. <TT>loadLeaguefile()</TT> can
+be used in the <TT>onLoad</TT>-event in the BODY-tag to automatically download leagues
+when the page is loaded. More information on JavaScript-functions is available
+<A HREF="jscript.html">here</A>.
+
+<H3>Show meetings from previous seasons</H3>
+
+<P>When you display <I>Previous matches</I> in <I>Compare teams</I> TeamStats
+will automatically look through the leagues that have been loaded and try
+to find meetings from previous seasons. In order for this to work the teams
+have to have the exact same names in the different leagues. It's also important
+that the parameters <TT>LeagueName</TT> and <TT>Season</TT> are set so it's clear in what
+league the meeting occurred. The leagues are sorted according to the value
+of the <TT>Season</TT> parameter. So it's important to be consistent when using
+this parameter. It doesn't matter what format you use (1996/97, 96-97,
+1997 etc) as long as you use the same format. Don't use 1995/96 one season
+and 96-97 the next.
+
+<P>Note that TeamStats will go through <I>all</I> the loaded leagues looking
+for previous meetings. That means that if you have two leagues with nothing
+in common but with teams with the same names TeamStats will display these
+matches as previous meetings. To prevent this you can use the <TT>NoPrevSeason</TT>
+parameter. If you set it to &quot;True&quot; TeamStats will not look for
+matches from previous seasons.
+
+<P><A HREF="example5.html">This</A> is an example of a league displaying meetings
+from previous seasons.
+
+<BR><BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>

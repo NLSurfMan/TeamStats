@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE>TeamStats - Example</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<CENTER>[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H3 ALIGN=center>Example 6</H3>
+
+<CENTER>
+
+<FORM NAME=selectForm>
+<INPUT TYPE="radio" NAME="leagueRadio" VALUE="data/args/pl97args.txt" CHECKED
+   onClick="document.TeamStats.setLeaguefile(this.value)"> Premier League
+<INPUT TYPE="radio" NAME="leagueRadio" VALUE="data/args/seriea97args.txt"
+   onClick="document.TeamStats.setLeaguefile(this.value)"> Seria A
+<INPUT TYPE="radio" NAME="leagueRadio" VALUE="data/args/elit97args.txt"
+   onClick="document.TeamStats.setLeaguefile(this.value)"> Elitserien
+</FORM>
+
+<APPLET CODE="embe.ts.TeamStats.class" NAME=TeamStats WIDTH=560 HEIGHT=480>
+<PARAM NAME=Leaguefile VALUE=data/args/pl97args.txt>
+<PARAM NAME=NoPrevSeason VALUE=true>
+</APPLET>
+
+</CENTER>
+
+<BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>

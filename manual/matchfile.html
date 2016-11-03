@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Description" CONTENT="TeamStats is a Java-applet that displays tables, matches and statistics from a league in some sport.">
+<TITLE>TeamStats - Matchfile</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FBFFB1">
+<CENTER>[ <A HREF="install.html">Back to install</A> ]
+<HR></CENTER>
+
+<H1 ALIGN=CENTER>TeamStats</H1>
+
+<H2>The matchfile</H2>
+
+<P>The matchfile is an standard text file that contains the played matches.
+The matches are to be written in the following way:
+
+<PRE>Ipswich-Norwich 5-0</PRE>
+
+<P>The matchrow can contain blanks or tabs and a team name can be made out of several
+words:
+
+<PRE>  Ipswich Town   -   Manchester Utd   3  -  0</PRE>
+
+<P>The names of the teams can not be longer than 16 characters and can not
+contain any hyphens, -. It's also important that teams have the exact same
+name throughout the file. If you call a team &quot;Manchester U&quot; in
+one place and &quot;Man. Utd&quot; in another they will be treated as two
+different teams.<BR>
+You can also put some other text before and after the match itself (although this information is not used):
+
+<PRE>Sat. May 6th 15:00  Ipswich Town  -  Manchester Utd   3 - 0 (2-0)
+                  ^^-at least two blanks or one tab here   ^-at least one blank or one tab here</PRE>
+
+<P>The text before the match can however not contain any hyphens, -.<BR>
+Every match has to placed on a single row. The matchfile can also contain
+rows that are not matchrows. The matches shall of course be placed in the
+same order as they are played.
+
+<H3><A NAME="sudden">Specifying Sudden Death results</A></H3>
+<P>Some leagues use Sudden Death when matches end in a draw. If you want to use support for Sudden Death the first thing you need to do is to set the <A HREF="params.html#sudden">SuddenDeath-parameter</A>. Then you have to specify which matches ended in Sudden Death. This is done by simply attaching the string 'SD' after the match. Like this:
+
+<PRE>Toronto Maple Leafs - Florida Panthers 5 - 4 SD
+                                            ^-at least one blank or one tab here</PRE>
+
+<H3><A NAME="dates">Using dates in the matchfile</A></H3>
+<P>If you want to you can also include match dates in the matchfile. The dates
+will be displayed in various places in TeamStats. It will however mean
+some further demands on the matchfile. If you don't want to use dates just
+ignore this section and follow the instructions of the matchfile in the
+section above.
+
+<P>In order to tell TeamStats to look for dates in the matchfile you have
+to use the parameter <TT>DateChar</TT> to specify what character is to be used as
+a date separator. The date separator is the character between the day and
+the month. In 6/5 the / is the separator and in 6.5 the . is the separator.
+Any character can be used as a separator. This is how you specify the separator:
+<PRE>&lt;PARAM NAME=DateChar VALUE="/"&gt;</PRE>
+If you want to use dates you <B>have </B>to specify a separator. If no
+separator is specified TeamStats will not look for dates. In the following examples / is used as a separator.
+
+<P>The dates are to be written in the following format: <TT>number separator
+number</TT>. For example: 6/5. I doesn't matter which comes first, the day
+or the month. So the example above could mean both May 6th or June 5th.
+TeamStats doesn't interpret the date in any way, it is just read in and
+then displayed in the same format. So as long as you are consistent you
+can use it in any way you like.
+
+<P>The dates should be written on their own rows and placed above the matches that were played on that date, like this:
+<PRE>17/8
+Milan - Parma   2-2</PRE>
+The daterow can also contain other text before and after the date (this information is not used):
+<PRE>Sunday 17/8 1997
+      ^----^----- at least one blank or tab here
+Milan - Parma   2-2</PRE>
+You don't have to specify dates for every match. If no date is specified
+the match will get the same date as the previous match. So you can write
+like this:
+<PRE>17/8
+Milan - Parma  2-2
+Inter - Lazio  2-0
+Juventus - Bologna  0-1
+18/8
+Roma - Sampdoria  1-1
+Atlanta - Bari  2-1</PRE>
+<A HREF="example3.html">This</A> is an example of how TeamStats looks when
+dates are used. And <A HREF="data/all96date.txt">this</A> is how the matchfile
+looks.
+
+<BR><BR>
+<CENTER>
+<HR ALIGN="center" WIDTH="75%">
+[ <A HREF="install.html">Back to install</A> ]
+</CENTER>
+
+</BODY>
+</HTML>
