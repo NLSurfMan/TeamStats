@@ -20,8 +20,9 @@ still compiles and runs without modification (besides the enum-thing ofcourse).
 The goal of this project is make the applet usable as a standalone propgram. After that, possibily port this program to current UI standards, using JavaFX. 
   
 ##Usage
-This program requires some options. The easiest way to load all the arguments is via parameter `Leaguefile`. This parameter should point to a file relative to the JAR file and should 
-contain the paramaters separated by an equal-sign (=) (To be more precise, it needs to be in the [Java Properties format](http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html#load(java.io.Reader))). 
+Download the JAR file from the dist directory. Save it to a directory for later.
+
+To run this program, it requires one mandatory option: `Matchfile`. It should contain the match data in the format suitable for Teamstats. Since this program accepts a lot of other options, you can put all the options in one file, called the `Leaguefile` and point the program to that. All the paramaters in that file should separated by an equal-sign (=) (To be more precise, it needs to be in the [Java Properties format](http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html#load(java.io.Reader))). 
 
 ##Bat/cmd file
 In the `dist` directory is a `cmd`-file which you can copy and adapt, so you can setup multiple competitions for multiple periods.  
