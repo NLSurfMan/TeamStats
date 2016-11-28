@@ -70,7 +70,7 @@ public class StatPanel extends TSPanel {
         String s = league_.getTitle();
         if (!s.equals(" ")) { // check that league has a title
             ys = 35;
-            g.drawString(s, (size().width - fm.stringWidth(s)) / 2, ys - 15);
+            g.drawString(s, (getSize().width - fm.stringWidth(s)) / 2, ys - 15);
         }
         y = ys;
         g.drawString(Text.STA_PLAYED, x1, y += height);
@@ -127,9 +127,9 @@ public class StatPanel extends TSPanel {
             }
         }
 
-        int xmatch = (size().width - fm.stringWidth(league_.getMatch(0).matchString())) / 2;
+        int xmatch = (getSize().width - fm.stringWidth(league_.getMatch(0).matchString())) / 2;
         g.setColor(secCol_);
-        g.drawString(Text.STA_BIGHOME, (size().width - fm.stringWidth(Text.STA_BIGHOME)) / 2, y += (height + gap));
+        g.drawString(Text.STA_BIGHOME, (getSize().width - fm.stringWidth(Text.STA_BIGHOME)) / 2, y += (height + gap));
         g.setColor(primCol_);
         try {
             g.drawString(league_.getMatch(bigHomeWin_).matchString(), xmatch, y += height);
@@ -138,7 +138,7 @@ public class StatPanel extends TSPanel {
         }
 
         g.setColor(secCol_);
-        g.drawString(Text.STA_BIGAWAY, (size().width - fm.stringWidth(Text.STA_BIGAWAY)) / 2, y += (height + gap));
+        g.drawString(Text.STA_BIGAWAY, (getSize().width - fm.stringWidth(Text.STA_BIGAWAY)) / 2, y += (height + gap));
         g.setColor(primCol_);
         try {
             g.drawString(league_.getMatch(bigAwayWin_).matchString(), xmatch, y += height);
@@ -147,7 +147,7 @@ public class StatPanel extends TSPanel {
         }
 
         g.setColor(secCol_);
-        g.drawString(Text.STA_MOSTGOALS, (size().width - fm.stringWidth(Text.STA_MOSTGOALS)) / 2, y += (height + gap));
+        g.drawString(Text.STA_MOSTGOALS, (getSize().width - fm.stringWidth(Text.STA_MOSTGOALS)) / 2, y += (height + gap));
         g.setColor(primCol_);
         try {
             g.drawString(league_.getMatch(mostGoals_).matchString(), xmatch, y += height);

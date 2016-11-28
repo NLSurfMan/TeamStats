@@ -27,13 +27,12 @@ package embe.ts;
 import embe.ui.HyperLink;
 import embe.ui.ModePanel;
 
+import java.applet.Applet;
 import java.awt.*;
 import java.awt.image.ImageObserver;
 import java.io.DataInputStream;
 import java.net.URL;
-import java.util.Hashtable;
-import java.util.Properties;
-import java.util.Vector;
+import java.util.*;
 
 
 /**
@@ -41,10 +40,12 @@ import java.util.Vector;
  *
  * @author Mats Bovin
  */
-public class TeamStats extends java.applet.Applet implements Runnable {
+public class TeamStats extends Applet implements Runnable {
     public final static Font MAINFONT = new Font("Courier", Font.PLAIN, 12);
-    private final static String VERSION = "TeamStats v1.2";
-    private final static String COPYRIGHT = "Copyright (c) 1996-99 Mats Bovin.";
+    private final static String VERSION = "TeamStats v1.3";
+    private final static String COPYRIGHT = "Original by Mats Bovin (1996-99). Updated by WarnerJan Veldhuis (2016)";
+    private static final String GITHUB_URI = "https://github.com/NLSurfMan/TeamStats";
+
     protected boolean hideBorder_ = false;
 
     protected Hashtable leagueNames_ = new Hashtable();
@@ -66,40 +67,39 @@ public class TeamStats extends java.applet.Applet implements Runnable {
     protected boolean error_ = false;
 
 
-    /** Returns info about parameters */
-/*  public String[][] getParameterInfo() {
-    String[][] pinfo = {
-		  {"Leaguefile",  "url",    "URL to file with parameters"},
-		  {"LeagueName",  "string", "Name of league"},
-		  {"Season",      "string", "Season of league"},
-		  {"Matchfile",   "url",    "URL to file with matches"},
-		  {"WinPoints",   "int",    "Points for winning a game"},
-		  {"DrawPoints",  "int",    "Points for a draw"},
-		  {"LossPoints",  "int",    "Points for loosing a game"},
-		  {"SDWinPoints", "int",    "Points for winning a game in SD"},
-		  {"SDLossPoints","int",    "Points for loosing a game in SD"},
-		  {"SuddenDeath", "boolean","League uses Sudden Death"},
-		  {"ShowSDInTable","boolean","Should SD-columns be showed in the table"},
-		  {"GDiffSort",   "boolean","Use goaldiff to separate teams with equal points"},
-		  {"LineX",       "int",    "Place a qualifying line at this position in the table"},
-		  {"HideX",       "string", "Hide a team"},
-		  {"PointsX",     "string", "Give extra points to a team"},
-		  {"MarkX",       "string", "Marks a team in the table"},
-		  {"NoPrevSeason","boolean","Don't look for previous meetings"},
-		  {"HideBorder",  "boolean","Hides border around applet"},
-		  {"ForeCol",     "string", "Sets foreground color"},
-		  {"BackCol",     "string", "Sets background color"},
-		  {"PrimCol",     "string", "Sets primary drawing color"},
-		  {"SecCol",      "string", "Sets secondary drawing color"},
-		  {"ButtonCol",   "string", "Sets button color"},
-		  {"ButtonTextCol", "string", "Sets button text color"},
-		  {"ButtonSelectCol", "string", "Color of selected button"},
-		  {"DateChar",    "character", "Sets date separator"},
-	};
-
-	return pinfo;
-  }
-*/
+    /**
+     * Returns info about parameters
+     */
+    public String[][] getParameterInfo() {
+        return new String[][]{
+                {"Leaguefile", "url", "URL to file with parameters"},
+                {"LeagueName", "string", "Name of league"},
+                {"Season", "string", "Season of league"},
+                {"Matchfile", "url", "URL to file with matches"},
+                {"WinPoints", "int", "Points for winning a game"},
+                {"DrawPoints", "int", "Points for a draw"},
+                {"LossPoints", "int", "Points for loosing a game"},
+                {"SDWinPoints", "int", "Points for winning a game in SD"},
+                {"SDLossPoints", "int", "Points for loosing a game in SD"},
+                {"SuddenDeath", "boolean", "League uses Sudden Death"},
+                {"ShowSDInTable", "boolean", "Should SD-columns be showed in the table"},
+                {"GDiffSort", "boolean", "Use goaldiff to separate teams with equal points"},
+                {"LineX", "int", "Place a qualifying line at this position in the table"},
+                {"HideX", "string", "Hide a team"},
+                {"PointsX", "string", "Give extra points to a team"},
+                {"MarkX", "string", "Marks a team in the table"},
+                {"NoPrevSeason", "boolean", "Don't look for previous meetings"},
+                {"HideBorder", "boolean", "Hides border around applet"},
+                {"ForeCol", "string", "Sets foreground color"},
+                {"BackCol", "string", "Sets background color"},
+                {"PrimCol", "string", "Sets primary drawing color"},
+                {"SecCol", "string", "Sets secondary drawing color"},
+                {"ButtonCol", "string", "Sets button color"},
+                {"ButtonTextCol", "string", "Sets button text color"},
+                {"ButtonSelectCol", "string", "Color of selected button"},
+                {"DateChar", "character", "Sets date separator"},
+                };
+    }
 
     /**
      * Build the GUI, executed once
@@ -176,7 +176,7 @@ public class TeamStats extends java.applet.Applet implements Runnable {
 
         // create the panels
         tablePanel_ = new TablePanel(primCol, secCol, foreCol, backCol);
-        matchPanel_ = new MatchPanel(primCol, secCol, foreCol, backCol, size().width);
+        matchPanel_ = new MatchPanel(primCol, secCol, foreCol, backCol, getSize().width);
         statsPanel_ = new StatPanel(primCol, secCol, foreCol, backCol);
         comparePanel_ = new ComparePanel(primCol, secCol, foreCol, backCol, noPrev);
 
@@ -205,13 +205,14 @@ public class TeamStats extends java.applet.Applet implements Runnable {
         // a copyright-msg and link to homepage at the bottom
         URL homeURL = null;
         try {
-            homeURL = new URL(Text.MAI_HOMEURL);
+//            homeURL = new URL(Text.MAI_HOMEURL);
+            homeURL = new URL(GITHUB_URI);
         }
         catch (java.net.MalformedURLException e) {
         }
         HyperLink link = new HyperLink(homeURL, getAppletContext(), VERSION);
         link.setForeground(primCol);
-        Label copyLab = new Label(COPYRIGHT);
+        HyperLink copyLab = new HyperLink(homeURL, getAppletContext(), COPYRIGHT);
         copyLab.setForeground(foreCol);
         Panel southbar = new Panel();
         southbar.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -288,7 +289,7 @@ public class TeamStats extends java.applet.Applet implements Runnable {
     /**
      * Make room for border
      */
-    public Insets insets() {
+    public Insets getInsets() {
         if (!hideBorder_) {
             return new Insets(1, 1, 1, 1);
         }
@@ -339,7 +340,7 @@ public class TeamStats extends java.applet.Applet implements Runnable {
      */
     public void paint(Graphics g) {
         if (!hideBorder_) {
-            Dimension d = size();
+            Dimension d = getSize();
             g.drawRect(0, 0, d.width - 1, d.height - 1);
         }
     }
@@ -583,15 +584,15 @@ public class TeamStats extends java.applet.Applet implements Runnable {
         // set standard settings
         set.put("mode", Text.MAI_TABLE);
         set.put("league", league);
-        set.put("tab_place", new Integer(0));
-        set.put("tab_match", new Integer(0));
-        set.put("tab_num", new Integer(5));
+        set.put("tab_place", 0);
+        set.put("tab_match", 0);
+        set.put("tab_num", 5);
 
         set.put("mat_team", "ALL");
-        set.put("mat_place", new Integer(0));
-        set.put("mat_res", new Integer(0));
+        set.put("mat_place", 0);
+        set.put("mat_res", 0);
 
-        set.put("com_mode", new Integer(0));
+        set.put("com_mode", 0);
         set.put("com_home", "");
         set.put("com_away", "");
     }

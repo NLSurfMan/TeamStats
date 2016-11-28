@@ -45,19 +45,19 @@ public class TablePanel extends TSPanel {
     public TablePanel(Color prim, Color sec, Color fore, Color back) {
         super(prim, sec, fore, back);
 
-        placeCh_.addItem(Text.TAB_ALL1);
-        placeCh_.addItem(Text.TAB_HOME);
-        placeCh_.addItem(Text.TAB_AWAY);
+        placeCh_.add(Text.TAB_ALL1);
+        placeCh_.add(Text.TAB_HOME);
+        placeCh_.add(Text.TAB_AWAY);
         placeCh_.setForeground(foreCol_);
         placeCh_.setBackground(backCol_);
 
-        matchCh_.addItem(Text.TAB_ALL2);
-        matchCh_.addItem(Text.TAB_FIRST);
-        matchCh_.addItem(Text.TAB_LAST);
+        matchCh_.add(Text.TAB_ALL2);
+        matchCh_.add(Text.TAB_FIRST);
+        matchCh_.add(Text.TAB_LAST);
         matchCh_.setForeground(foreCol_);
         matchCh_.setBackground(backCol_);
 
-        numEd_.disable();
+        numEd_.setEnabled(false);
         numEd_.setForeground(foreCol_);
         numEd_.setBackground(backCol_);
 
@@ -117,10 +117,10 @@ public class TablePanel extends TSPanel {
             ho = false;
         }
         if (Text.TAB_ALL1.equals(matchCh_.getSelectedItem())) {
-            numEd_.disable();
+            numEd_.setEnabled(false);
         }
         if (Text.TAB_FIRST.equals(matchCh_.getSelectedItem())) {
-            numEd_.enable();
+            numEd_.setEnabled(true);
             try {
                 st = Integer.parseInt(numEd_.getText());
             }
@@ -129,7 +129,7 @@ public class TablePanel extends TSPanel {
             }
         }
         if (Text.TAB_LAST.equals(matchCh_.getSelectedItem())) {
-            numEd_.enable();
+            numEd_.setEnabled(true);
             fi = false;
             try {
                 st = Integer.parseInt(numEd_.getText());
@@ -149,11 +149,11 @@ public class TablePanel extends TSPanel {
     public void paint(Graphics g) {
         super.paint(g);
         g.setFont(TeamStats.MAINFONT);
-        int h = toolBar_.size().height;
+        int h = toolBar_.getSize().height;
         if (h < 25) {
             h = 34; // Netscape bugfix?
         }
-        table_.show(g, primCol_, secCol_, size().width, h);
+        table_.show(g, primCol_, secCol_, getSize().width, h);
     }
 
     /**
@@ -166,9 +166,9 @@ public class TablePanel extends TSPanel {
             league_ = newL;
         }
 
-        int place = ((Integer) opt.get("tab_place")).intValue();
-        int match = ((Integer) opt.get("tab_match")).intValue();
-        int num = ((Integer) opt.get("tab_num")).intValue();
+        int place = (Integer) opt.get("tab_place");
+        int match = (Integer) opt.get("tab_match");
+        int num = (Integer) opt.get("tab_num");
         try {
             placeCh_.select(place);
         }
@@ -184,10 +184,10 @@ public class TablePanel extends TSPanel {
         }
 
         // NN 3 for UNIX bugfix start here
-        placeCh_.resize(placeCh_.size().width + 1, placeCh_.size().height);
-        placeCh_.resize(placeCh_.size().width - 1, placeCh_.size().height);
-        matchCh_.resize(matchCh_.size().width + 1, matchCh_.size().height);
-        matchCh_.resize(matchCh_.size().width - 1, matchCh_.size().height);
+        placeCh_.setSize(placeCh_.getSize().width + 1, placeCh_.getSize().height);
+        placeCh_.setSize(placeCh_.getSize().width - 1, placeCh_.getSize().height);
+        matchCh_.setSize(matchCh_.getSize().width + 1, matchCh_.getSize().height);
+        matchCh_.setSize(matchCh_.getSize().width - 1, matchCh_.getSize().height);
         // end bugfix
 
         handleOptions();

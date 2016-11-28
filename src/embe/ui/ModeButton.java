@@ -203,7 +203,7 @@ public class ModeButton extends java.awt.Panel {
         else {
             g.setColor(getBackground());
         }
-        Dimension d = size();
+        Dimension d = getSize();
         g.fillRoundRect(0, 0, d.width, d.height, 5, 5);
     }
 
@@ -211,7 +211,7 @@ public class ModeButton extends java.awt.Panel {
     /**
      * Makes room for rectangle to be drawn.
      */
-    public Insets insets() {
+    public Insets getInsets() {
         return new Insets(rectWidth_, rectWidth_, rectWidth_, rectWidth_);
     }
 

@@ -155,7 +155,7 @@ public class HyperLink extends java.awt.Canvas {
      * Prints and underlines the text.
      */
     public void paint(java.awt.Graphics g) {
-        Dimension d = size();
+        Dimension d = getSize();
         g.drawString(text_, 0, d.height - 4);
         g.drawLine(0, d.height - 3, d.width, d.height - 3);
     }
@@ -195,18 +195,18 @@ public class HyperLink extends java.awt.Canvas {
 
 
     /* Returns size of component */
-    public java.awt.Rectangle bounds() {
+    public java.awt.Rectangle getBounds() {
         FontMetrics fm = getFontMetrics(getFont());
         Dimension d = new Dimension(fm.stringWidth(text_), fm.getHeight()); //14
         return new java.awt.Rectangle(d);
     }
 
-    public Dimension minimumSize() {
+    public Dimension getMinimumSize() {
         FontMetrics fm = getFontMetrics(getFont());
         return new Dimension(fm.stringWidth(text_), fm.getHeight()); //14
     }
 
-    public Dimension preferredSize() {
+    public Dimension getPreferredSize() {
         FontMetrics fm = getFontMetrics(getFont());
         return new Dimension(fm.stringWidth(text_), fm.getHeight()); //14
     }

@@ -62,7 +62,7 @@ public abstract class TSPanel extends java.awt.Panel {
     public void paint(Graphics g) {
         // clears the screen (because of bug in Java for Unix)
         g.setColor(getBackground());
-        java.awt.Dimension d = size();
+        java.awt.Dimension d = getSize();
         g.fillRect(0, 0, d.width, d.height);
 
         // draw the background image

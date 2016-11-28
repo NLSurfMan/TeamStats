@@ -232,9 +232,9 @@ public class ComparePanel extends TSPanel {
      */
     public void paint(Graphics g) {
         super.paint(g);
-        Dimension dim = size();
+        Dimension dim = getSize();
         g.setFont(TeamStats.MAINFONT);
-        int y = toolBar_.size().height + teamBar_.size().height;
+        int y = toolBar_.getSize().height + teamBar_.getSize().height;
 
         // stats
         if (mode_ < 2) {
@@ -295,8 +295,8 @@ public class ComparePanel extends TSPanel {
             for (int a = 0; a < league_.getNumTeams(); a++) {
                 try {
                     if (!league_.isHidden(league_.getTeamAlpha(a))) {
-                        homeCh_.addItem(league_.getTeamAlpha(a));
-                        awayCh_.addItem(league_.getTeamAlpha(a));
+                        homeCh_.add(league_.getTeamAlpha(a));
+                        awayCh_.add(league_.getTeamAlpha(a));
                     }
                 }
                 catch (RuntimeException e) {
@@ -310,7 +310,7 @@ public class ComparePanel extends TSPanel {
 
         }
 
-        mode_ = ((Integer) opt.get("com_mode")).intValue();
+        mode_ = (Integer) opt.get("com_mode");
         String home = (String) opt.get("com_home");
         String away = (String) opt.get("com_away");
         switch (mode_) {
@@ -335,10 +335,10 @@ public class ComparePanel extends TSPanel {
         awayCh_.select(away);
 
         // NN 3 for UNIX bugfix start here
-        homeCh_.resize(homeCh_.size().width + 1, homeCh_.size().height);
-        homeCh_.resize(homeCh_.size().width - 1, homeCh_.size().height);
-        awayCh_.resize(awayCh_.size().width + 1, awayCh_.size().height);
-        awayCh_.resize(awayCh_.size().width - 1, awayCh_.size().height);
+        homeCh_.setSize(homeCh_.getSize().width + 1, homeCh_.getSize().height);
+        homeCh_.setSize(homeCh_.getSize().width - 1, homeCh_.getSize().height);
+        awayCh_.setSize(awayCh_.getSize().width + 1, awayCh_.getSize().height);
+        awayCh_.setSize(awayCh_.getSize().width - 1, awayCh_.getSize().height);
         // end bugfix
 
         handleOptions();

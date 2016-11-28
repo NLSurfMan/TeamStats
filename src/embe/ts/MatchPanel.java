@@ -50,22 +50,22 @@ public class MatchPanel extends TSPanel implements Runnable {
     public MatchPanel(Color prim, Color sec, Color fore, Color back, int appletWidth) {
         super(prim, sec, fore, back);
 
-        teamCh_.addItem(Text.MAT_ALL1);
+        teamCh_.add(Text.MAT_ALL1);
 
-        matchCh_.addItem(Text.MAT_ALL2);
-        matchCh_.addItem(Text.MAT_HOME);
-        matchCh_.addItem(Text.MAT_AWAY);
+        matchCh_.add(Text.MAT_ALL2);
+        matchCh_.add(Text.MAT_HOME);
+        matchCh_.add(Text.MAT_AWAY);
         matchCh_.setForeground(foreCol_);
         matchCh_.setBackground(backCol_);
-        matchCh_.disable();
+        matchCh_.setEnabled(false);
 
-        resCh_.addItem(Text.MAT_ALL3);
-        resCh_.addItem(Text.MAT_WON);
-        resCh_.addItem(Text.MAT_DRAWN);
-        resCh_.addItem(Text.MAT_LOST);
+        resCh_.add(Text.MAT_ALL3);
+        resCh_.add(Text.MAT_WON);
+        resCh_.add(Text.MAT_DRAWN);
+        resCh_.add(Text.MAT_LOST);
         resCh_.setForeground(foreCol_);
         resCh_.setBackground(backCol_);
-        resCh_.disable();
+        resCh_.setEnabled(false);
 
         Label tempLab;
         tempLab = new Label(Text.MAT_TEAM, Label.LEFT);
@@ -120,8 +120,8 @@ public class MatchPanel extends TSPanel implements Runnable {
             team = teamCh_.getSelectedItem();
         }
         opt.put("mat_team", team);
-        opt.put("mat_place", new Integer(matchCh_.getSelectedIndex()));
-        opt.put("mat_res", new Integer(resCh_.getSelectedIndex()));
+        opt.put("mat_place", matchCh_.getSelectedIndex());
+        opt.put("mat_res", resCh_.getSelectedIndex());
     }
 
     /**
@@ -134,8 +134,8 @@ public class MatchPanel extends TSPanel implements Runnable {
             team_ = league_.getTeamId(teamCh_.getSelectedItem());
         }
 
-        matchCh_.enable(team_ > -1);
-        resCh_.enable(team_ > -1);
+        matchCh_.setEnabled(team_ > -1);
+        resCh_.setEnabled(team_ > -1);
 
         if (matchCh_.getSelectedItem().equals(Text.MAT_AWAY)) {
             home_ = false;
@@ -186,8 +186,8 @@ public class MatchPanel extends TSPanel implements Runnable {
      */
     public void run() {
         // clear list first
-        if (matchLi_.countItems() > 0) {
-            matchLi_.clear();
+        if (matchLi_.getItemCount() > 0) {
+            matchLi_.removeAll();
         }
 
         if (team_ == -1) {  // all matches
@@ -204,9 +204,9 @@ public class MatchPanel extends TSPanel implements Runnable {
                     // the '-' will be at pos 16)
                     if ((mStr.charAt(22) == '-') && (!mStr.startsWith("     "))) {
                         prevDate = mStr.substring(0, 6); // remember date
-                        matchLi_.addItem(" "); // a little more space
+                        matchLi_.add(" "); // a little more space
                     }
-                    matchLi_.addItem(mStr);
+                    matchLi_.add(mStr);
                 }
                 catch (Exception e) {
                 }
@@ -230,7 +230,7 @@ public class MatchPanel extends TSPanel implements Runnable {
                         }
 
                         if (result_ > 1 || result_ == result) {
-                            matchLi_.addItem(m.shortString(team_));
+                            matchLi_.add(m.shortString(team_));
                         }
                     }
                 }
@@ -254,11 +254,11 @@ public class MatchPanel extends TSPanel implements Runnable {
             teamCh_ = new Choice();
             teamCh_.setForeground(foreCol_);
             teamCh_.setBackground(backCol_);
-            teamCh_.addItem(Text.MAT_ALL1);
+            teamCh_.add(Text.MAT_ALL1);
             for (int a = 0; a < league_.getNumTeams(); a++) {
                 try {
                     if (!league_.isHidden(league_.getTeamAlpha(a))) {
-                        teamCh_.addItem(league_.getTeamAlpha(a));
+                        teamCh_.add(league_.getTeamAlpha(a));
                     }
                 }
                 catch (RuntimeException e) {
@@ -291,12 +291,12 @@ public class MatchPanel extends TSPanel implements Runnable {
         }
 
         // NN 3 for UNIX bugfix start here
-        teamCh_.resize(teamCh_.size().width + 1, teamCh_.size().height);
-        teamCh_.resize(teamCh_.size().width - 1, teamCh_.size().height);
-        matchCh_.resize(matchCh_.size().width + 1, matchCh_.size().height);
-        matchCh_.resize(matchCh_.size().width - 1, matchCh_.size().height);
-        resCh_.resize(resCh_.size().width + 1, resCh_.size().height);
-        resCh_.resize(resCh_.size().width - 1, resCh_.size().height);
+        teamCh_.setSize(teamCh_.getSize().width + 1, teamCh_.getSize().height);
+        teamCh_.setSize(teamCh_.getSize().width - 1, teamCh_.getSize().height);
+        matchCh_.setSize(matchCh_.getSize().width + 1, matchCh_.getSize().height);
+        matchCh_.setSize(matchCh_.getSize().width - 1, matchCh_.getSize().height);
+        resCh_.setSize(resCh_.getSize().width + 1, resCh_.getSize().height);
+        resCh_.setSize(resCh_.getSize().width - 1, resCh_.getSize().height);
         // end bugfix
 
         handleOptions(skipThread);

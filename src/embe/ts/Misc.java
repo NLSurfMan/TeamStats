@@ -118,26 +118,7 @@ class Misc {
      * Parses a String to a Color
      */
     public static Color parseColorString(String colorString) {
-        int r, g, b;
-        Color col = null;
-
-        try {
-            if (colorString.startsWith("#")) {
-                colorString = colorString.substring(1);
-            }
-            r = Integer.valueOf(colorString.substring(0, 2), 16).intValue();
-            g = Integer.valueOf(colorString.substring(2, 4), 16).intValue();
-            b = Integer.valueOf(colorString.substring(4, 6), 16).intValue();
-            col = new Color(r, g, b);
-        }
-        catch (NullPointerException e) {
-        }
-        catch (StringIndexOutOfBoundsException e) {
-        }
-        catch (NumberFormatException e) {
-        }
-
-        return col;
+        return colorString == null ? null : Color.decode(colorString);
     }
 
     /**
