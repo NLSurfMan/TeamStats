@@ -8,8 +8,6 @@ import java.util.Objects;
 import java.util.Properties;
 
 public class Settings {
-    public static final String LAST_TEAMSTATS_FILE = "last_teamstats_file";
-
     private Properties props;
 
     public Settings() {

@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.FileChooser;
 import nl.wveldhuis.ts.ui.TeamStats;
-import nl.wveldhuis.ts.ui.util.Settings;
+import nl.wveldhuis.ts.ui.util.TeamStatsSettings;
 import nl.wveldhuis.ts.ui.util.TextResources;
 
 import java.io.File;
@@ -16,7 +16,7 @@ public class LoadFileAction implements EventHandler<ActionEvent> {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(TextResources.get("actions.load.filechooser.title"));
 
-        String lastFile = TeamStats.getInstance().getSettings().get(Settings.LAST_TEAMSTATS_FILE);
+        String lastFile = TeamStats.getInstance().getSettings().get(TeamStatsSettings.LAST_TEAMSTATS_FILE);
         if (lastFile != null) {
             File file = Paths.get(lastFile).toFile();
             fileChooser.setInitialDirectory(file.getParentFile());

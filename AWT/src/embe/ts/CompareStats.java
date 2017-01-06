@@ -84,7 +84,10 @@ class CompareStats {
     public void show(Graphics g, Color primCol, Color secCol, int x, int ys) {
         java.awt.FontMetrics fm = g.getFontMetrics();
         int height = 15 - 1; //fm.getAscent()+fm.getDescent()-1;
-        int x1 = x + Text.COM_X1, x2 = x1 + Text.COM_X2, gap = (height / 2) - 2, y;
+        int x1 = x + Text.COM_X1;
+        int x2 = x1 + Text.COM_X2;
+        int gap = (height / 2) - 2;
+        int y;
         TableTeam t = table_.getTableTeam(team_);
         //int played=t.Played;
 

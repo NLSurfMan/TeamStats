@@ -2,28 +2,29 @@ package nl.wveldhuis.ts.ui;
 
 import javafx.application.Application;
 import javafx.collections.ListChangeListener;
-import javafx.geometry.Orientation;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCombination;
-import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import nl.wveldhuis.ts.ApplicationConstants;
 import nl.wveldhuis.ts.model.TeamStatsModel;
 import nl.wveldhuis.ts.ui.actions.LoadFileAction;
 import nl.wveldhuis.ts.ui.actions.QuitAction;
-import nl.wveldhuis.ts.ui.util.Settings;
-import nl.wveldhuis.ts.ui.util.TextResources;
+import nl.wveldhuis.ts.ui.util.*;
 
-import java.util.Locale;
+import java.util.Comparator;
 
 public class TeamStats extends Application {
     private static TeamStats INSTANCE;
 
     private Stage primaryStage;
     private TeamStatsModel model;
-    private Settings settings;
+    private TeamStatsSettings settings;
 
     public static void main(String[] args) {
 //        Locale.setDefault(new Locale("nl", "NL"));
@@ -31,14 +32,14 @@ public class TeamStats extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         INSTANCE = this;
 
-        this.primaryStage = primaryStage;
-        this.settings = new Settings();
+        this.primaryStage = stage;
         this.model = new TeamStatsModel();
+        this.settings = new TeamStatsSettings();
 
-        primaryStage.setTitle(TextResources.get("application.title", ApplicationConstants.VERSION));
+        stage.setTitle(TextResources.get("application.title", ApplicationConstants.VERSION));
 
         BorderPane pane = new BorderPane();
         pane.setTop(createMenu());
@@ -47,8 +48,13 @@ public class TeamStats extends Application {
         Scene scene = new Scene(pane, 800, 600);
         scene.getStylesheets().add("nl/wveldhuis/ts/resources/default.css");
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        Rectangle2D max = Screen.getScreens().stream().map(Screen::getBounds).max(Comparator.comparingDouble(Rectangle2D::getWidth)).orElse(Screen.getPrimary().getBounds());
+
+        stage.setX(max.getMinX());
+        stage.setY(max.getMinY());
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @Override
@@ -77,12 +83,11 @@ public class TeamStats extends Application {
                 helpMenu
         );
 
-
         return new VBox(menuBar);
     }
 
     private Node createContent() {
-        VBox result= new VBox();
+        VBox result = new VBox();
 
         TabPane tabs = new TabPane();
         tabs.getTabs().addListener(new ListChangeListener<Tab>() {
@@ -97,8 +102,6 @@ public class TeamStats extends Application {
         Tab tab2 = new Tab("Matches");
         Tab tab3 = new Tab("Statistics");
         Tab tab4 = new Tab("Compare teams");
-
-
 
         tabs.getTabs().addAll(tab1, tab2, tab3, tab4);
 

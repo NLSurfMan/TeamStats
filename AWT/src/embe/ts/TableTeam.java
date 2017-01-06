@@ -232,7 +232,7 @@ public class TableTeam {
         }
         String drawStr = (hideDraws) ? "" : Misc.rightString(drawn_, 2, ' ') + " ";
 
-        return Misc.rightString(pos_, 2, ' ') + "." + team_ + " " +
+        return Misc.rightString(pos_, 2, ' ') + ". " + team_ + " " +
                 Misc.rightString(played_, 2, ' ') + "  " +
                 Misc.rightString(won_, 2, ' ') + "" +
                 sdWon +

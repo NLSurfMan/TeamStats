@@ -1,15 +1,16 @@
 package nl.wveldhuis.ts.model;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class TeamStatsModel {
-    private SimpleStringProperty selectedFile = new SimpleStringProperty("No file selected");
+    private StringProperty selectedFile = new SimpleStringProperty("No file selected");
 
     public String getSelectedFile() {
         return selectedFile.get();
     }
 
-    public SimpleStringProperty selectedFileProperty() {
+    public StringProperty selectedFileProperty() {
         return selectedFile;
     }
 

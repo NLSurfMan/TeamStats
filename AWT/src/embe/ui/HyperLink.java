@@ -167,6 +167,7 @@ public class HyperLink extends java.awt.Canvas {
     public boolean mouseEnter(Event evt, int x, int y) {
         if (appletContext_ != null) {
             appletContext_.showStatus(mouseOver_);
+            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         }
         return true;
     }
@@ -178,6 +179,7 @@ public class HyperLink extends java.awt.Canvas {
     public boolean mouseExit(Event evt, int x, int y) {
         if (appletContext_ != null) {
             appletContext_.showStatus("");
+            setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         }
         return true;
     }
