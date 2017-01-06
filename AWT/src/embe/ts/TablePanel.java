@@ -91,9 +91,9 @@ public class TablePanel extends TSPanel {
     /**
      * Gets options
      */
-    public void getOptions(java.util.Hashtable opt) {
-        opt.put("tab_place", new Integer(placeCh_.getSelectedIndex()));
-        opt.put("tab_match", new Integer(matchCh_.getSelectedIndex()));
+    public void getOptions(java.util.Hashtable<String,Integer> opt) {
+        opt.put("tab_place", placeCh_.getSelectedIndex());
+        opt.put("tab_match", matchCh_.getSelectedIndex());
         int st;
         try {
             st = Integer.parseInt(numEd_.getText());
@@ -101,7 +101,7 @@ public class TablePanel extends TSPanel {
         catch (NumberFormatException e) {
             st = -1;
         }
-        opt.put("tab_num", new Integer(st));
+        opt.put("tab_num", st);
     }
 
     /**
