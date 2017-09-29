@@ -1,6 +1,6 @@
 # TeamStats
 
-##Description
+## Description
 Original description: TeamStats is a Java program that displays tables, matches and statistics from a league in some sport. You can also select two teams and compare them in a number of ways. TeamStats is primarily developed for soccer but can also be used with other sports such as ice-hockey, handball etc.
 
 Due to a request on [java-forums.org](http://www.java-forums.org/java-applets/96419-how-can-i-get-old-applet-work.html), this project has been revived.
