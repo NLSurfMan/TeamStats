@@ -19,15 +19,15 @@ still compiles and runs without modification (besides the enum-thing ofcourse).
 ## Goals
 The goal of this project is make the applet usable as a standalone propgram. After that, possibily port this program to current UI standards, using JavaFX. 
   
-##Usage
+## Usage
 Download the JAR file from the dist directory. Save it to a directory for later.
 
 To run this program, it requires one mandatory option: `Matchfile`. It should contain the match data in the format suitable for Teamstats. Since this program accepts a lot of other options, you can put all the options in one file, called the `Leaguefile` and point the program to that. All the paramaters in that file should separated by an equal-sign (=) (To be more precise, it needs to be in the [Java Properties format](http://docs.oracle.com/javase/6/docs/api/java/util/Properties.html#load(java.io.Reader))). 
 
-##Bat/cmd file
+## Bat/cmd file
 In the `dist` directory is a `cmd`-file which you can copy and adapt, so you can setup multiple competitions for multiple periods.  
  
-###Example Leaguefile
+### Example Leaguefile
 Let's assume all our data files are in directory `data` and the name of the leaguefile is `serie-a.txt` with this example content:
 
 ````
@@ -42,14 +42,14 @@ then the call to start the program is
 
 *Make sure you have java.exe in your PATH! Instructions on how to update your PATH variable can be found [here](http://docs.oracle.com/javase/tutorial/essential/environment/paths.html)*.
 
-###Width/height parameters
+### Width/height parameters
 Normally for applets, the width and height are contained in the HTML file that defines the applet. Since this is a standalone version, you can optionally specifiy them as parameters:
 ````
 java.exe -jar TeamStats.jar Leaguefile=data/seria-a.txt width=800 height=600
 ````
 If you omit them, the defaults are Width=640, Height=480 (Don't you love those old resolutions :))
 
-###Parameter overview
+### Parameter overview
 The table below contains all the parameters you can enter either on the command line or in the `Leaguefile`. For more information about the parameters, there is an old document describing them all in
  detail: [Setting parameters](manual/params.html)
 
